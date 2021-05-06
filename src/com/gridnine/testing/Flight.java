@@ -1,5 +1,6 @@
 package com.gridnine.testing;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -13,7 +14,14 @@ public class Flight {
         segments = segs;
     }
 
-    List<Segment> getSegments() {
+    public Flight(Flight flight) {
+        segments = new ArrayList<>();
+
+        for (Segment seg : flight.getSegments())
+            segments.add(new Segment(seg));
+    }
+
+    public List<Segment> getSegments() {
         return segments;
     }
 

@@ -17,6 +17,11 @@ public class Segment {
         arrivalDate = Objects.requireNonNull(arr);
     }
 
+    public Segment(Segment seg) {
+        departureDate = seg.departureDate;
+        arrivalDate = seg.arrivalDate;
+    }
+
     public LocalDateTime getDepartureDate() {
         return departureDate;
     }
